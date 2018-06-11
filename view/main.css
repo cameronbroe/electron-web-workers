@@ -127,18 +127,3 @@ body {
 #blue-button {
 	background-color: blue;
 }
-
-
-
-.buttons-container {
-	display: flex;
-	flex-direction: column;
-}
-
-/*#input-example {
-	border: 1px solid red;
-}
-
-#output-example {
-	border: 1px solid green;
-}*/
