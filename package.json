@@ -11,5 +11,8 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^2.0.2"
+  },
+  "dependencies": {
+    "johnny-five": "^0.15.0"
   }
 }
