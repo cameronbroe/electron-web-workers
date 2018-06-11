@@ -46,9 +46,9 @@ function bootstrapInput() {
 function bootstrapOutput() {
 	// Establish connection to LED pins
 	let leds = {
-		red: new five.Led(10),
-		green: new five.Led(9),
-		blue: new five.Led(8)
+		red: new five.Led(9),
+		green: new five.Led(10),
+		blue: new five.Led(11)
 	};
 
 	// Subscribe to UI input

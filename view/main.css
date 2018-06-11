@@ -109,11 +109,11 @@ body {
 }
 
 .output-button:not(.selected) {
-	filter: brightness(50%) blur(5px);
+	filter: brightness(50%);
 }
 
 .output-button.selected {
-	border: 5px solid #000000;
+	box-shadow: white 0px 0px 10px 3px;
 }
 
 #red-button {
