@@ -1,0 +1,144 @@
+h1 {
+	width: 100%;
+	text-align: center;
+	font-weight: 500;
+	margin: 18px 0;
+}
+
+body {
+	background-color: #FFF5DB;
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.example-container {
+	display: flex;
+	flex-basis: 50%;
+	height: calc(100vh - 96px)
+}
+
+.example {
+	width: 100%;
+	height: calc(100vh - 96px);
+	margin: 10px;
+	border-radius: 5px;
+	background-color: #FFE7A9;
+	box-shadow: #FFCC4A 0px 1px 1px 0px;
+}
+
+.demo-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 100%;
+}
+
+.speed-indicator {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.speed-indicator .label {
+	font-size: 2em;
+	color: #248B0C;
+}
+
+.speed-indicator #current-speed {
+	font-size: 6em;
+	margin: 0.5em;
+	color: rgba(36, 139, 12, 0.8);
+}
+
+/*
+	Spinner CSS derived from https://projects.lukehaas.me/css-loaders/
+*/
+
+.spinner, .spinner:after {
+	border-radius: 50%;
+	width: 20em;
+	height: 20em;
+}
+
+.spinner {
+	margin: 0px auto;
+	font-size: 10px;
+	position: relative;
+	text-indent: -9999em;
+	border-top: 4em solid rgba(36, 139, 12, 0.2);
+	border-right: 4em solid rgba(36, 139, 12, 0.2);
+	border-bottom: 4em solid rgba(36, 139, 12, 0.2);
+	border-left: 4em solid #248B0C;
+	transform: translateZ(0);
+	animation: load8 1.1s infinite linear;
+}
+
+@keyframes load8 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+/* END SPINNER CODE */
+
+.buttons-container {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+}
+
+.button {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.output-button {
+	display: block;
+	height: 250px;
+	width: 250px;
+	border-radius: 50%;
+	margin: 0px auto;
+}
+
+.output-button:not(.selected) {
+	filter: brightness(50%) blur(5px);
+}
+
+.output-button.selected {
+	border: 5px solid #000000;
+}
+
+#red-button {
+	background-color: red;
+}
+
+#green-button {
+	background-color: green;
+}
+
+#blue-button {
+	background-color: blue;
+}
+
+
+
+.buttons-container {
+	display: flex;
+	flex-direction: column;
+}
+
+/*#input-example {
+	border: 1px solid red;
+}
+
+#output-example {
+	border: 1px solid green;
+}*/
