@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const five = require('johnny-five');
 const board = new five.Board({ repl: false });
 
@@ -13,6 +13,7 @@ function createMainWindow() {
 
 	board.on("ready", () => {
 		bootstrapInput();
+		bootstrapOutput();
 	});
 
 	mainWindow.loadFile('view/index.html');
@@ -22,7 +23,7 @@ function createMainWindow() {
 
 function bootstrapInput() {
 	// Establish connection to potentiometer to read data
-	let pot = five.Sensor("A0");
+	let pot = new five.Sensor("A0");
 
 	// Min and max speeds in RPM
 	let minSpeed = 30;
@@ -43,7 +44,18 @@ function bootstrapInput() {
 }
 
 function bootstrapOutput() {
+	// Establish connection to LED pins
+	let leds = {
+		red: new five.Led(10),
+		green: new five.Led(9),
+		blue: new five.Led(8)
+	};
 
+	// Subscribe to UI input
+	ipcMain.on('led-update', (event, color) => {
+		// Toggle the LED that was clicked
+		leds[color].toggle();
+	});
 }
 
 app.on('ready', createMainWindow);
